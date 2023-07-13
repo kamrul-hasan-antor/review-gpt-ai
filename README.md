@@ -5,7 +5,7 @@ Project Purpose: The project is to get a product review that it will be recommen
 
 Technologies: React, Node, Express, Firebase, OpenAI.
 
-
+![App Screenshot](https://i.ibb.co/R7fQ7dk/Screenshot-2023-07-13-235622.png)
 ![App Screenshot](https://i.ibb.co/MNXG4tR/Screenshot-2023-07-13-235548.png)
 ![App Screenshot](https://i.ibb.co/gVrhw53/Screenshot-2023-07-13-235537.png)
-![App Screenshot](https://i.ibb.co/R7fQ7dk/Screenshot-2023-07-13-235622.png)
+

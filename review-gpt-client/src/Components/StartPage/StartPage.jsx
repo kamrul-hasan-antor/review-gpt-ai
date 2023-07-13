@@ -1,7 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { AuthContext } from "../../Contexts/Authprovider";
+import { useNavigate } from "react-router-dom";
 
 const StartPage = () => {
+  const { googleSignin } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleGoogleSignin = () => {
+    googleSignin()
+      .then((result) => {
+        if (result?.user) {
+          navigate("/home");
+        }
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <section className="container mx-auto flex flex-col justify-center items-center h-screen w-screen">
       <div>
@@ -15,16 +30,12 @@ const StartPage = () => {
         </div>
 
         <div className="flex justify-center mt-5">
-          <Link to="/login">
-            <button className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl  focus:outline-none focus:border-none font-bold rounded-lg text-lg px-5 py-2 text-center mr-2 mb-2">
-              Login
-            </button>
-          </Link>
-          <Link to="/signup">
-            <button className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl  focus:outline-none focus:border-none font-bold rounded-lg text-lg px-5 py-2 text-center mr-2 mb-2">
-              Signup
-            </button>
-          </Link>
+          <button
+            onClick={handleGoogleSignin}
+            className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl  focus:outline-none focus:border-none font-bold rounded-lg text-md px-5 py-2 text-center mr-2 mb-2 uppercase"
+          >
+            Continue with google
+          </button>
         </div>
       </div>
     </section>

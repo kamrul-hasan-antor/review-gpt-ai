@@ -3,7 +3,7 @@ import { ReviewContext } from "../Contexts/ReviewProvider";
 
 const Review = () => {
   const { data } = useContext(ReviewContext);
-  console.log(data);
+  
 
   const {
     ProductName,
